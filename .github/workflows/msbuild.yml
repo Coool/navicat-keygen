@@ -38,7 +38,7 @@ jobs:
         msbuild navicat-keygen.sln /p:Configuration=Release /p:Platform=x86
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: navicat-keygen-x86.zip
         path: bin/x86-Release/*.exe
@@ -78,7 +78,7 @@ jobs:
         msbuild navicat-keygen.sln /p:Configuration=Release /p:Platform=x64
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: navicat-keygen-x64.zip
         path: bin/x64-Release/*.exe
