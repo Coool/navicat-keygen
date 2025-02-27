@@ -30,7 +30,7 @@ jobs:
       run: |
         git clone https://notabug.org/doublesine/navicat-keygen
         cd navicat-keygen
-        git checkout windows
+        git checkout windows-coool
 
     - name: Build project
       run: |
@@ -70,7 +70,7 @@ jobs:
       run: |
         git clone https://notabug.org/doublesine/navicat-keygen
         cd navicat-keygen
-        git checkout windows
+        git checkout windows-coool
 
     - name: Build project
       run: |
