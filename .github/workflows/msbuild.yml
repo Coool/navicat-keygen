@@ -16,6 +16,7 @@ jobs:
         vcpkg install fmt:x86-windows-static
         vcpkg install rapidjson:x86-windows-static
         vcpkg install keystone:x86-windows-static
+        vcpkg install capstone:x86-windows-static
         popd
 
     - name: Clone source
@@ -56,6 +57,7 @@ jobs:
         vcpkg install fmt:x64-windows-static
         vcpkg install rapidjson:x64-windows-static
         vcpkg install keystone:x64-windows-static
+        vcpkg install capstone:x64-windows-static
         popd
 
     - name: Clone source
