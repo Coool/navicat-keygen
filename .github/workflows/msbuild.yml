@@ -52,7 +52,7 @@ jobs:
       run: |
         pushd .
         cd ${env:VCPKG_INSTALLATION_ROOT}
-        gitt pull
+        git pull
         git checkout 3b3bd424827a1f7f4813216f6b32b6c61e386b2e
         vcpkg install openssl:x64-windows-static
         vcpkg install unicorn:x64-windows-static
