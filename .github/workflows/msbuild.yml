@@ -11,14 +11,14 @@ jobs:
         pushd .
         cd ${env:VCPKG_INSTALLATION_ROOT}
         git pull
-        git switch -c openssl-1.1.1 89295c9fe22e97ca9e380a6c771ccf2ff09dca95
-        bootstrap-vcpkg.bat
-        vcpkg install openssl:x86-windows-static
         vcpkg install unicorn:x86-windows-static
         vcpkg install fmt:x86-windows-static
         vcpkg install rapidjson:x86-windows-static
         vcpkg install keystone:x86-windows-static
         vcpkg install capstone:x86-windows-static
+        git switch -c openssl-1.1.1 89295c9fe22e97ca9e380a6c771ccf2ff09dca95
+        bootstrap-vcpkg.bat
+        vcpkg install openssl:x86-windows-static
         popd
 
     - name: Clone source
@@ -54,14 +54,14 @@ jobs:
         pushd .
         cd ${env:VCPKG_INSTALLATION_ROOT}
         git pull
-        git switch -c openssl-1.1.1 89295c9fe22e97ca9e380a6c771ccf2ff09dca95
-        bootstrap-vcpkg.bat
-        vcpkg install openssl:x64-windows-static
         vcpkg install unicorn:x64-windows-static
         vcpkg install fmt:x64-windows-static
         vcpkg install rapidjson:x64-windows-static
         vcpkg install keystone:x64-windows-static
         vcpkg install capstone:x64-windows-static
+        git switch -c openssl-1.1.1 89295c9fe22e97ca9e380a6c771ccf2ff09dca95
+        bootstrap-vcpkg.bat
+        vcpkg install openssl:x64-windows-static
         popd
 
     - name: Clone source
