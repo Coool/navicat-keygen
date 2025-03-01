@@ -9,16 +9,15 @@ jobs:
       shell: pwsh
       run: |
         pushd .
-        git clone https://github.com/microsoft/vcpkg vcpkg
-        cd vcpkg
+        cd ${env:VCPKG_INSTALLATION_ROOT}
+        git pull
         git checkout 3b3bd424827a1f7f4813216f6b32b6c61e386b2e
-        .\bootstrap-vcpkg.bat
-        .\vcpkg install openssl:x86-windows-static
-        .\vcpkg install unicorn:x86-windows-static
-        .\vcpkg install fmt:x86-windows-static
-        .\vcpkg install rapidjson:x86-windows-static
-        .\vcpkg install keystone:x86-windows-static
-        .\vcpkg install capstone:x86-windows-static
+        vcpkg install openssl:x86-windows-static
+        vcpkg install unicorn:x86-windows-static
+        vcpkg install fmt:x86-windows-static
+        vcpkg install rapidjson:x86-windows-static
+        vcpkg install keystone:x86-windows-static
+        vcpkg install capstone:x86-windows-static
         popd
 
     - name: Clone source
@@ -37,7 +36,7 @@ jobs:
 
     - name: Build project
       run: |
-        .\vcpkg integrate install
+        vcpkg integrate install
         msbuild navicat-keygen.sln /p:Configuration=Release /p:Platform=x86
 
     - name: Upload artifacts
@@ -52,16 +51,15 @@ jobs:
     - name: Install dependencies
       run: |
         pushd .
-        git clone https://github.com/microsoft/vcpkg vcpkg
-        cd vcpkg
+        cd ${env:VCPKG_INSTALLATION_ROOT}
+        gitt pull
         git checkout 3b3bd424827a1f7f4813216f6b32b6c61e386b2e
-        .\bootstrap-vcpkg.bat
-        .\vcpkg install openssl:x64-windows-static
-        .\vcpkg install unicorn:x64-windows-static
-        .\vcpkg install fmt:x64-windows-static
-        .\vcpkg install rapidjson:x64-windows-static
-        .\vcpkg install keystone:x64-windows-static
-        .\vcpkg install capstone:x64-windows-static
+        vcpkg install openssl:x64-windows-static
+        vcpkg install unicorn:x64-windows-static
+        vcpkg install fmt:x64-windows-static
+        vcpkg install rapidjson:x64-windows-static
+        vcpkg install keystone:x64-windows-static
+        vcpkg install capstone:x64-windows-static
         popd
 
     - name: Clone source
@@ -80,7 +78,7 @@ jobs:
 
     - name: Build project
       run: |
-        .\vcpkg integrate install
+        vcpkg integrate install
         msbuild navicat-keygen.sln /p:Configuration=Release /p:Platform=x64
 
     - name: Upload artifacts
