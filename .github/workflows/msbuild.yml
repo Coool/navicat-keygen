@@ -12,6 +12,7 @@ jobs:
         cd ${env:VCPKG_INSTALLATION_ROOT}
         git pull
         git switch -c openssl-1.1.1 3b3bd424827a1f7f4813216f6b32b6c61e386b2e
+        bootstrap-vcpkg.bat
         vcpkg install openssl:x86-windows-static
         vcpkg install unicorn:x86-windows-static
         vcpkg install fmt:x86-windows-static
@@ -54,6 +55,7 @@ jobs:
         cd ${env:VCPKG_INSTALLATION_ROOT}
         git pull
         git switch -c openssl-1.1.1 3b3bd424827a1f7f4813216f6b32b6c61e386b2e
+        bootstrap-vcpkg.bat
         vcpkg install openssl:x64-windows-static
         vcpkg install unicorn:x64-windows-static
         vcpkg install fmt:x64-windows-static
