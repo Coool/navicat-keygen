@@ -18,6 +18,7 @@ jobs:
         vcpkg install capstone:x86-windows-static
         git switch -c openssl-1.1.1 89295c9fe22e97ca9e380a6c771ccf2ff09dca95
         bootstrap-vcpkg.bat
+        wget https://repo.msys2.org/mingw/i686/mingw-w64-i686-pkg-config-0.29.2-3-any.pkg.tar.zst -P ${env:VCPKG_INSTALLATION_ROOT}\downloads
         vcpkg install openssl:x86-windows-static
         popd
 
